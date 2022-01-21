@@ -10,6 +10,7 @@
 
 #define _USE_MATH_DEFINES
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 using namespace std;
 
@@ -22,9 +23,6 @@ int main () {
     double volume_gumball = 0;
     double volume_jar = 0;
     int total_gumballs = 0;
-
-    cout << fixed << setprecision(2) << PI;
-
 
     cout << "Welcome to my program that estimates the number of gumballs in the jar!" << endl;
 
