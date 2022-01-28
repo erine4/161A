@@ -4,9 +4,9 @@
 using namespace std;
 
 int main () {
-    double number_cookies = 0.0;
-    int calories = 53;
-    double servings = 3.0;
+    int number_cookies = 0.0;
+    const int calories = 53.0;
+    const int servings = 3.0;
     int total_calories = 0;
     double total_servings = 0.0;
 
@@ -15,11 +15,11 @@ int main () {
     cout << "Hello, welcome to my program that tells you how many calories " << endl
         << "and servings are in the amount of Oreos you have eaten." << endl;
     
-    cout << "Enter the number of cookies you have consumed: ";
+    cout << "Enter the number of cookies you have consumed (as a whole number): ";
     cin >> number_cookies;
 
     total_calories = number_cookies * calories;
-    total_servings = number_cookies / servings;
+    total_servings = number_cookies / static_cast<double>(servings);
     
     cout << "You have consumed " << total_calories << " calories" 
         << " and approximately " << total_servings << " servings." << endl;
