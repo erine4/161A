@@ -8,8 +8,8 @@ const int calories = 53.0;
 const int servings = 3.0;
 
 //function declarations
-int total_calories (double number_cookies);
-double total_servings (double number_cookies);
+int total_calories (int number_cookies);
+double total_servings (int number_cookies);
 
 int main () {
     //declare variables
@@ -34,10 +34,10 @@ return 0;
 }
 
 //define function contents
-int total_calories (double number_cookies) {
+int total_calories (int number_cookies) {
     return number_cookies * calories ;
 }
 
-double total_servings (double number_cookies) {
+double total_servings (int number_cookies) {
     return number_cookies / static_cast<double>(servings) ;
 }
