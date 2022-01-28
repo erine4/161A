@@ -21,7 +21,7 @@ int main () {
     //print welcome message 
     cout << "This program will tell you how many calories and servings you have consumed, " 
         << "based on the number of Oreos." << endl;
-
+    
     //user input and store number_cookies
     cout << "Enter the number of Oreos consumed: ";
     cin >> number_cookies;
@@ -30,15 +30,13 @@ int main () {
     cout << "You have consumed " << total_calories (number_cookies) << " calories and " 
         << total_servings (number_cookies) << " servings." << endl;
 
-
 return 0;
 }
 
-//define function content
+//define function contents
 double total_calories (double number_cookies) {
     return number_cookies * calories ;
 }
-
 
 double total_servings (double number_cookies) {
     return number_cookies / static_cast<double>(servings) ;
