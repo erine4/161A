@@ -6,11 +6,11 @@ using namespace std;
 int main () {
     double number_cookies = 0.0;
     int calories = 53;
-    double servings = 3.00;
+    double servings = 3.0;
     int total_calories = 0;
     double total_servings = 0.0;
 
-    cout << fixed << setprecision(2);
+    cout << fixed << setprecision(1);
 
     cout << "Hello, welcome to my program that tells you how many calories " << endl
         << "and servings are in the amount of Oreos you have eaten." << endl;
