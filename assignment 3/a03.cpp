@@ -3,33 +3,34 @@
 #include <iomanip>
 using namespace std;
 
-/*constants*/
+//constants
 const int calories = 53.0;
 const int servings = 3.0;
 
-/*function declarations */
+//function declarations
 double total_calories (double number_cookies);
 double total_servings (double number_cookies);
 
 int main () {
     //declare variables
-    double number_cookies = 0.0;
+    int number_cookies = 0.0;
 
-    cout << fixed << setprecision(2);
+   //set decimals
+   cout << fixed << setprecision(1);
 
     //print welcome message 
     cout << "This program will tell you how many calories and servings you have consumed, " 
         << "based on the number of Oreos." << endl;
 
     //user input and store number_cookies
-    cout << "Enter the number of Oreos consumed: " << endl;
+    cout << "Enter the number of Oreos consumed: ";
     cin >> number_cookies;
 
-    //obtain total_calories and total_servings
-    
+    //call function
     total_calories (number_cookies);
     total_servings (number_cookies);
     
+    //output statement 
     cout << "You have consumed " << total_calories (number_cookies) << " calories and " 
         << total_servings (number_cookies) << " servings." << endl;
 
@@ -37,6 +38,7 @@ int main () {
 return 0;
 }
 
+//define function content
 double total_calories (double number_cookies) {
     return number_cookies * calories ;
 }
