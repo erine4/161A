@@ -8,7 +8,7 @@ const int calories = 53.0;
 const int servings = 3.0;
 
 //function declarations
-double total_calories (double number_cookies);
+int total_calories (double number_cookies);
 double total_servings (double number_cookies);
 
 int main () {
@@ -23,18 +23,18 @@ int main () {
         << "based on the number of Oreos." << endl;
     
     //user input and store number_cookies
-    cout << "Enter the number of Oreos consumed: ";
+    cout << "Enter the number of Oreos you have eaten (as a whole number): ";
     cin >> number_cookies;
     
     //output statement and call function
-    cout << "You have consumed " << total_calories (number_cookies) << " calories and " 
-        << total_servings (number_cookies) << " servings." << endl;
+    cout << number_cookies << " cookies is approximately " << total_servings (number_cookies) << " servings." << endl;
+    cout << "You consumed " << total_calories (number_cookies) << " calories." << endl;
 
 return 0;
 }
 
 //define function contents
-double total_calories (double number_cookies) {
+int total_calories (double number_cookies) {
     return number_cookies * calories ;
 }
 
