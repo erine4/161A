@@ -25,12 +25,8 @@ int main () {
     //user input and store number_cookies
     cout << "Enter the number of Oreos consumed: ";
     cin >> number_cookies;
-
-    //call function
-    total_calories (number_cookies);
-    total_servings (number_cookies);
     
-    //output statement 
+    //output statement and call function
     cout << "You have consumed " << total_calories (number_cookies) << " calories and " 
         << total_servings (number_cookies) << " servings." << endl;
 
