@@ -15,14 +15,14 @@ int main () {
     cout << "This program will tell you how many calories " << endl
         << "and servings are in the amount of Oreos you have eaten." << endl;
     
-    cout << "Enter the number of cookies you have consumed (as a whole number): ";
+    cout << "Enter the number of cookies you have eaten (as a whole number): ";
     cin >> number_cookies;
 
     total_calories = number_cookies * calories;
     total_servings = number_cookies / static_cast<double>(servings);
     
-    cout << "You have consumed " << total_calories << " calories"
-        << " and approximately " << total_servings << " servings." << endl;
+    cout << number_cookies << " cookies is approximately " << total_servings << " servings." << endl;
+    cout << "You consumed " << total_calories << " calories. " << endl;
 
     return 0;
 }
