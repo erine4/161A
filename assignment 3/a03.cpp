@@ -2,47 +2,45 @@
 #include <cmath>
 using namespace std;
 
+/*constants*/
+const int calories = 53.0;
+const int servings = 3.0;
+
 /*function declarations */
-double calories (double);
-double servings (double);
+double total_calories (double number_cookies);
+double total_servings (double number_cookies);
 
 int main () {
     //declare variables
     double number_cookies = 0.0;
 
+    cout << fixed << setprecision(2);
+
     //print welcome message 
-    cout << "This program will tell you how many calories and servings you have consumed, "
-        << "based on the number of Oreos." 
-        << endl 
-        << endl;
+    cout << "This program will tell you how many calories and servings you have consumed, " 
+        << "based on the number of Oreos." << endl;
 
     //user input and store number_cookies
-    cout << "Enter the number of Oreos consumed: " 
-        << endl;
+    cout << "Enter the number of Oreos consumed: " << endl;
     cin >> number_cookies;
 
     //obtain total_calories and total_servings
-    double calories (double number_cookies);
-    double servings (double number_cookies);
-
-    //output message
-    cout << "You have consumed "
-        << number_cookies
-        << " which has "
-        << calories
-        << " calories and "
-        << servings
-        << " servings"
-        << endl;
     
+    total_calories (number_cookies);
+    total_servings (number_cookies);
+    
+    cout << "You have consumed " << total_calories (number_cookies) << " calories and " 
+        << total_servings (number_cookies) << " servings." << endl;
+
+
 return 0;
 }
 
-double calories (double number_cookies) {
-    return calories (number_cookies * 53) ;
+double total_calories (double number_cookies) {
+    return number_cookies * calories ;
 }
 
 
-double servings (double number_cookies) {
-    return servings (number_cookies / 3) ;
+double total_servings (double number_cookies) {
+    return number_cookies / static_cast<double>(servings) ;
 }
