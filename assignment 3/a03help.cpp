@@ -12,7 +12,7 @@ int main () {
 
     cout << fixed << setprecision(1);
 
-    cout << "Hello, welcome to my program that tells you how many calories " << endl
+    cout << "This program will tell you how many calories " << endl
         << "and servings are in the amount of Oreos you have eaten." << endl;
     
     cout << "Enter the number of cookies you have consumed (as a whole number): ";
@@ -21,7 +21,7 @@ int main () {
     total_calories = number_cookies * calories;
     total_servings = number_cookies / static_cast<double>(servings);
     
-    cout << "You have consumed " << total_calories << " calories" 
+    cout << "You have consumed " << total_calories << " calories"
         << " and approximately " << total_servings << " servings." << endl;
 
     return 0;
