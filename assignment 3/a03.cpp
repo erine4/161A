@@ -15,8 +15,8 @@ int main () {
     //declare variables
     int number_cookies = 0.0;
 
-   //set decimals
-   cout << fixed << setprecision(1);
+    //set decimals
+    cout << fixed << setprecision(1);
 
     //print welcome message 
     cout << "This program will tell you how many calories and servings you have consumed, " 
