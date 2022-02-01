@@ -74,12 +74,27 @@ int main() {
     /* input type of pass */
     cout << "Please enter the type of pass you wish to purchase (enter A, H, or Y): ";
         cin >> typeFastPass;
-        //add input checker
+
+    /* add input checker if not a,h,y */
+        while ((typeFastPass != 'A') && (typeFastPass != 'a') && (typeFastPass != 'H') && (typeFastPass != 'h') && (typeFastPass != 'Y') && (typeFastPass != 'y'))    {
+            cin.clear();
+            cin.ignore(2, '\n');
+            cout << "Bad input! Please enter the letter A, H , or Y.";
+            cin >> typeFastPass;
+        }
+       
     
     /* input number of tickets */
     cout << "Enter the number of tickets purchased this month: ";
         cin >> numberTickets;
-        //add input checker
+        
+    /* add input checker if nan */
+        while (!cin)    {
+            cin.clear();
+            cin.ignore(200, '\n');
+            cout << "Bad input! Please enter a number.";
+            cin >> typeFastPass;
+        }
 
     /* display number of tickets */
     cout << "You have purchased " << numberTickets << " tickets!" << endl;
