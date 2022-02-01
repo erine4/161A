@@ -16,6 +16,9 @@ int main() {
     double totalCost = 0.0;
     double needToSpend = 0.0;
 
+    /* set precision */
+    cout << fixed << setprecision(2);
+    
     /* opening message */
     cout << "Welcome to TriMet Hop Fastpass!" 
                 << endl 
@@ -71,13 +74,15 @@ int main() {
     /* input type of pass */
     cout << "Please enter the type of pass you wish to purchase (enter A, H, or Y): ";
         cin >> typeFastPass;
+        //add input checker
     
     /* input number of tickets */
     cout << "Enter the number of tickets purchased this month: ";
         cin >> numberTickets;
+        //add input checker
 
     /* display number of tickets */
-    cout << "You have purchased " << numberTickets << "tickets!" << endl;
+    cout << "You have purchased " << numberTickets << " tickets!" << endl;
 
     /* if then statements */
     if ((typeFastPass == 'A') || (typeFastPass == 'a'))   {
@@ -89,12 +94,31 @@ int main() {
         totalCost = nonAdultTicket * numberTickets;
         cout << "You have paid: $" << totalCost << ".";
     }
+    cout << endl;
 
+    if ((typeFastPass == 'A') || (typeFastPass == 'a')) {
+        needToSpend = adultPassFree - totalCost;
+        if (needToSpend > 0)    {
+            cout << "Spend $" << needToSpend << " more to earn free rides for the rest of the month.";
+        }
+        else if (needToSpend <= 0)  {
+            cout << "You have earned free rides for the rest of the month!";
+        }
+    }
 
+    else if ((typeFastPass == 'H') || (typeFastPass == 'h') || (typeFastPass == 'Y') || (typeFastPass == 'y'))  {
+        needToSpend = nonAdultPassFree - totalCost;
+        if (needToSpend > 0)    {
+            cout << "Spend $" << needToSpend << " more to earn free rides for the rest of the month.";
+        }
+        else if (needToSpend <= 0)  {
+            cout << "You have earned free rides for the rest of the month!";
+        }
+    }
+    cout << endl;
 
-
-
-
+    /* ending message */
+    cout << "Thank you for riding TriMet!" << endl;
 
     return 0;
 }
