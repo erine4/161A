@@ -19,16 +19,18 @@ int main () {
     cout << fixed << setprecision(1);
 
     /* print welcome message */
-    cout << "This program will tell you how many calories and servings you have consumed, " 
-        << "based on the number of Oreos." << endl;
+    cout << "Welcome to the Oreo Calculator!"<< endl;
     
     /* user input and store number_cookies */
-    cout << "Enter the number of Oreos you have eaten (as a whole number): ";
+    cout << "Enter the number of Oreos eaten: ";
     cin >> number_cookies;
     
     /* output statement and call function */
-    cout << number_cookies << " cookies is approximately " << total_servings (number_cookies) << " servings." << endl;
+    cout << number_cookies << " Oreos equals " << total_servings (number_cookies) << " servings!" << endl;
     cout << "You consumed " << total_calories (number_cookies) << " calories." << endl;
+
+    /* output message */
+    cout << "Keep eating Oreos!" << endl;
 
 return 0;
 }
