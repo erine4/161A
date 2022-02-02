@@ -84,7 +84,7 @@ int main() {
                 (typeFastPass != 'y'))    {
             cin.clear();
             cin.ignore(2, '\n');
-            cout << "Bad input! Please enter the letter A, H , or Y.";
+            cout << "Bad input! Please enter the letter A, H , or Y. ";
             cin >> typeFastPass;
         }
        
