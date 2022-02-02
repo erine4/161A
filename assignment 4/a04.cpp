@@ -76,14 +76,18 @@ int main() {
         cin >> typeFastPass;
 
     /* add input checker if not a,h,y */
-        while ((typeFastPass != 'A') && (typeFastPass != 'a') && (typeFastPass != 'H') && (typeFastPass != 'h') && (typeFastPass != 'Y') && (typeFastPass != 'y'))    {
+        while ((typeFastPass != 'A') && 
+                (typeFastPass != 'a') && 
+                (typeFastPass != 'H') && 
+                (typeFastPass != 'h') && 
+                (typeFastPass != 'Y') && 
+                (typeFastPass != 'y'))    {
             cin.clear();
             cin.ignore(2, '\n');
             cout << "Bad input! Please enter the letter A, H , or Y.";
             cin >> typeFastPass;
         }
        
-    
     /* input number of tickets */
     cout << "Enter the number of tickets purchased this month: ";
         cin >> numberTickets;
@@ -92,9 +96,10 @@ int main() {
         while (!cin)    {
             cin.clear();
             cin.ignore(200, '\n');
-            cout << "Bad input! Please enter a number.";
-            cin >> typeFastPass;
+            cout << "Bad input! Please enter a number. ";
+            cin >> numberTickets;
         }
+    cout << endl;
 
     /* display number of tickets */
     cout << "You have purchased " << numberTickets << " tickets!" << endl;
@@ -102,19 +107,19 @@ int main() {
     /* if then statements */
     if ((typeFastPass == 'A') || (typeFastPass == 'a'))   {
         totalCost = adultTicket * numberTickets;
-        cout << "You have paid: $" << totalCost << ".";
+        cout << "You have paid: $ " << totalCost << ".";
     }
 
     else if ((typeFastPass == 'H') || (typeFastPass == 'h') || (typeFastPass == 'Y') || (typeFastPass == 'y'))    {
         totalCost = nonAdultTicket * numberTickets;
-        cout << "You have paid: $" << totalCost << ".";
+        cout << "You have paid: $ " << totalCost << ".";
     }
     cout << endl;
 
     if ((typeFastPass == 'A') || (typeFastPass == 'a')) {
         needToSpend = adultPassFree - totalCost;
         if (needToSpend > 0)    {
-            cout << "Spend $" << needToSpend << " more to earn free rides for the rest of the month.";
+            cout << "Spend $ " << needToSpend << " more to earn free rides for the rest of the month.";
         }
         else if (needToSpend <= 0)  {
             cout << "You have earned free rides for the rest of the month!";
@@ -124,12 +129,13 @@ int main() {
     else if ((typeFastPass == 'H') || (typeFastPass == 'h') || (typeFastPass == 'Y') || (typeFastPass == 'y'))  {
         needToSpend = nonAdultPassFree - totalCost;
         if (needToSpend > 0)    {
-            cout << "Spend $" << needToSpend << " more to earn free rides for the rest of the month.";
+            cout << "Spend $ " << needToSpend << " more to earn free rides for the rest of the month.";
         }
         else if (needToSpend <= 0)  {
             cout << "You have earned free rides for the rest of the month!";
         }
     }
+    cout << endl;
     cout << endl;
 
     /* ending message */
