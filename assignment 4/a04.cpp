@@ -72,7 +72,7 @@ int main() {
                 << endl;
 
     /* input type of pass */
-    cout << "Please enter the type of pass you wish to purchase (enter A, H, or Y): ";
+    cout << "Enter FastPass (A, H, or Y): ";
         cin >> typeFastPass;
 
     /* add input checker if not a,h,y */
