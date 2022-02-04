@@ -25,37 +25,51 @@ int main() {
                 << endl;
 
     /* fastPass choices */
-    cout << "FastPass Ticket: "
-                << setfill(' ') 
-                << setw(33) 
-                << "Ticket $" 
+    cout << setw(40)
+                << left
+                << "FastPass Choices"
+                << setw(8)
+                << right
+                << "Ticket $"
                 << endl;
 
     /* divider */
-    cout << std::setfill('-')
-                << setw(60)
-                << " "
+    cout << setfill('-')
+                << setw(38)
+                << ""
+                << setfill(' ')
+                << setw(2)
+                << ""
+                << setfill('-')
+                << setw(8)
+                << ""
                 << setfill(' ')
                 << endl;
 
     /* adult pass */
-    cout << "A. Adult Pass (ages 18-64)"
-                << setw(16)
-                << " "
+    cout << setw(41)
+                << left
+                << "A. Adult Pass (ages 18-64)"
+                << setw(5)
+                << right
                 << "$2.50"
                 << endl;
 
     /* honored citizen pass */
-    cout << "H. Honored Citizen (65+, disabilities)"
-                << setw(4)
-                << " "
+    cout << setw(41)
+                << left
+                << "H. Honored Citizen (65+, disabilities)"
+                << setw(5)
+                << right
                 << "$1.25"
                 << endl;
     
     /* youth pass */
-    cout << "Y. Youth Pass (ages 7-17)"
-                << setw(17) 
-                << " "
+    cout << setw(41)
+                << left
+                << "Y. Youth Pass (ages 7-17)"
+                << setw(5) 
+                << right
                 << "$1.25"
                 << endl
                 << endl;
