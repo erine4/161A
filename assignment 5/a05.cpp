@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 int main() {
@@ -10,11 +9,12 @@ int main() {
     string wordTMI = "TMI"; 
     string wordTTYL = "TTYL"; 
 
-    cout << "Welcome to the Text Message Decoder!" << endl;
+    cout << "Welcome to the Text Message Decoder!" << endl << endl;
     
     cout <<  "Enter a single line text message: ";
     getline(cin, textMessage);
-
+    
+    cout << endl;
     cout << "You entered: " << textMessage << endl;
 
     textMessage.find(wordBFF);
@@ -42,6 +42,7 @@ int main() {
         cout << "TTYL: talk to you later" << endl;
     }
 
+    cout << endl;
     cout << "END." << endl;
 
     return 0;
