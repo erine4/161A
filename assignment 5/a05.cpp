@@ -10,7 +10,12 @@ int main() {
     string wordTMI = "TMI"; 
     string wordTTYL = "TTYL"; 
 
+    cout << "Welcome to the Text Message Decoder!" << endl;
+    
+    cout <<  "Enter a single line text message: ";
+    cin >> textMessage;
 
+    
 
 
 
