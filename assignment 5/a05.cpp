@@ -42,7 +42,7 @@ int main() {
         cout << "TTYL: talk to you later" << endl;
     }
 
-
+    cout << "END." << endl;
 
     return 0;
 }
