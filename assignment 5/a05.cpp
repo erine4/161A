@@ -13,10 +13,34 @@ int main() {
     cout << "Welcome to the Text Message Decoder!" << endl;
     
     cout <<  "Enter a single line text message: ";
-    cin >> textMessage;
+    getline(cin, textMessage);
 
-    
+    cout << "You entered: " << textMessage << endl;
 
+    textMessage.find(wordBFF);
+    if (textMessage.find(wordBFF) != string::npos)  {
+        cout << "BFF: best friend forever" << endl;
+    }
+
+    textMessage.find(wordIDK);
+    if (textMessage.find(wordIDK) != string::npos)  {
+        cout << "IDK: I don't know" << endl;
+    }
+
+    textMessage.find(wordJK);
+    if (textMessage.find(wordJK) != string::npos)  {
+        cout << "JK: just kidding" << endl;
+    }
+
+    textMessage.find(wordTMI);
+    if (textMessage.find(wordTMI) != string::npos)  {
+        cout << "TMI: too much information" << endl;
+    }
+
+    textMessage.find(wordTTYL);
+    if (textMessage.find(wordTTYL) != string::npos)  {
+        cout << "TTYL: talk to you later" << endl;
+    }
 
 
 
