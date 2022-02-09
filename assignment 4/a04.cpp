@@ -1,3 +1,18 @@
+/******************************************************************************
+# Author:           Erin Egloff
+# Assignment:       Assignment 4
+# Date:             02/06/2022
+# Description:      This program will calculate the total price based on their type 
+                    of Hop Fastpass. The user will know the number of tickets purchased, 
+                    how much it will cost, and the cost to qualify for free rides for the 
+                    month (if applicable or not attained).
+# Input:            char typeFastPass, int numberTickets
+# Output:           "You have purchased ___ tickets!"
+                    "You have paid: $___."
+                    "Spend $___ more to earn free rides for the rest of the month."
+# Sources:          zyLab 4
+******************************************************************************/
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
