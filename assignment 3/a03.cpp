@@ -1,3 +1,17 @@
+/******************************************************************************
+# Author:           Erin Egloff
+# Assignment:       Assignment 3
+# Date:             01/30/2022
+# Description:      This program calculates the amount of servings and calories 
+                    based on the number of Oreos. The user will input the amount 
+                    of Oreos they have consumed and the program will tell them how 
+                    many calories and servings are in the cookies that were eaten.
+# Input:            Number of Oreos
+# Output:           "You have consumed " total_calories (number_cookies) " calories 
+                    and approximately " total_servings (number_cookies) " servings."
+# Sources:          zyLab 3
+#******************************************************************************/
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
