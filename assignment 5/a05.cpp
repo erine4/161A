@@ -2,14 +2,12 @@
 # Author:           Erin Egloff
 # Assignment:       Assignment 5
 # Date:             02/09/2022
-# Description:      This program will calculate the total price based on their type 
-                    of Hop Fastpass. The user will know the number of tickets purchased, 
-                    how much it will cost, and the cost to qualify for free rides for the 
-                    month (if applicable or not attained).
+# Description:      This program decodes a message from the user. It will take an 
+                    abbreviated text message and output what the abbreviations mean.
 # Input:            Str textMessage
-# Output:           "You have purchased ___ tickets!"
-                    "You have paid: $___."
-                    "Spend $___ more to earn free rides for the rest of the month."
+# Output:           Ex. "You entered: IDK why, but my BFF is annoying me."
+                    "IDK - I don’t know"
+                    "BFF - best friend forever"
 # Sources:          zyLab 5
 ******************************************************************************/
 
