@@ -4,7 +4,7 @@
 # Date:             02/09/2022
 # Description:      This program decodes a message from the user. It will take an 
                     abbreviated text message and output what the abbreviations mean.
-# Input:            Str textMessage
+# Input:            String textMessage
 # Output:           Ex. "You entered: IDK why, but my BFF is annoying me."
                     "IDK - I don’t know"
                     "BFF - best friend forever"
