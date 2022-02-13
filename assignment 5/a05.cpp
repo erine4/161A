@@ -21,7 +21,9 @@ int main() {
     string wordIDK = "IDK"; 
     string wordJK = "JK"; 
     string wordTMI = "TMI"; 
-    string wordTTYL = "TTYL"; 
+    string wordTTYL = "TTYL";
+    string wordBRB = "BRB";
+    string wordSTG = "STG";
 
     //display welcome message
     cout << "Welcome to the Text Message Decoder!" << endl << endl;
@@ -57,6 +59,16 @@ int main() {
     textMessage.find(wordTTYL);
     if (textMessage.find(wordTTYL) != string::npos)  {
         cout << "TTYL: talk to you later" << endl;
+    }
+
+    textMessage.find(wordBRB);
+    if (textMessage.find(wordBRB) != string::npos)  {
+        cout << "BRB: be right back" << endl;
+    }
+
+    textMessage.find(wordSTG);
+    if (textMessage.find(wordSTG) != string::npos)  {
+        cout << "STG: swear to god" << endl;
     }
 
     //end of program
