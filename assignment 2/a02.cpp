@@ -10,19 +10,18 @@
 
 #define _USE_MATH_DEFINES
 #include <iostream>
-#include <iomanip>
 #include <cmath>
-using namespace std;
-
 const double PI = M_PI;
-const double LOAD_FACTOR = 0.64; // Variable to state the capacity of jar
+using namespace std;
 
 int main () {
     double radius_gumball = 0;
     double radius_gumball_cubed = 0;
     double volume_gumball = 0;
     double volume_jar = 0;
+    const double LOAD_FACTOR = 0.64; // Variable to state the capacity of jar
     int total_gumballs = 0;
+
 
     cout << "Welcome to my program that estimates the number of gumballs in the jar!" << endl;
 
