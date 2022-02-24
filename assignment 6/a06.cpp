@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 #define _USE_MATH_DEFINES
 
 //Declare constants
@@ -30,39 +31,44 @@ int main()  {
     double average_gumballs = 0;
     double largest_gumball = 0;
     int largest_jar = 0;
+    int currentNumber, maxNumber = 0;
+    char userChar;
 
     //Welcome message
     cout << "Welcome to my Gumball Guesser Program!" << endl;
 
-    //Get user input
-    cout << "Enter the radius of a gumball (cm) and the volume of a "
+    do {
+        //Get user input
+        cout << "Enter the radius of a gumball (cm) and the volume of a "
          << "jar (mL) separated by a space: ";
-    cin >> radius_gumball >> volume_jar;
+        cin >> radius_gumball >> volume_jar;
 
-    //Calculations
-    radius_gumball_cubed = (radius_gumball * radius_gumball * radius_gumball);
-    volume_gumball = ((4.0 / 3) * PI * radius_gumball_cubed);
+        //Calculations
+        radius_gumball_cubed = (radius_gumball * radius_gumball * radius_gumball);
+        volume_gumball = ((4.0 / 3) * PI * radius_gumball_cubed);
 
-    volume_jar *= LOAD_FACTOR;
+        volume_jar *= LOAD_FACTOR;
 
-    est_gumballs = volume_jar / volume_gumball;
+        est_gumballs = volume_jar / volume_gumball;
 
-    //Output estimate of gumballs in jar
-    cout << "Estimate of gumballs in the jar: " << est_gumballs << endl;
+        //Output estimate of gumballs in jar
+        cout << "Estimate of gumballs in the jar: " << est_gumballs << endl;
 
-    //More guesses?
-    cout << endl << "Do you want to enter more (y/n): ";
+        //More guesses?
+        cout << endl << "Do you want to enter more (y/n): ";
+        cin >> userChar;
+    
+        //If y, go through loop again; if n, quit
+    } while (userChar == 'y');
 
-    //If y, go through loop again; if n, quit
+    
 
-
-
-
-
+    //Maximum and minimum input
     
     
     
-    //Display final output
+    // //Display final output
+    cout << endl;
     cout << "Number of entries: " << num_entries << endl;
     cout << "Average number of gumballs: " << average_gumballs << endl;
     cout << "Largest gumball: " << largest_gumball << " cm^3" << endl;
