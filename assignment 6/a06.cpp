@@ -17,21 +17,19 @@
 const double PI = M_PI;
 const double LOAD_FACTOR = 0.64;
 
-
 using namespace std;
 
 int main()  {
+    //Declare variables
     double radius_gumball = 0;
     double radius_gumball_cubed = 0;
     double volume_gumball = 0;
     double volume_jar = 0;
     int est_gumballs = 0;
-    int accum_gumballs = 0;
     int num_entries = 0;
     double average_gumballs = 0;
     double largest_gumball = 0;
-    int largest_jar = 0;
-    int currentNumber, maxNumber = 0;
+    double largest_jar = 0;
     char userChar;
     int total_gumballs = 0;
     int max_gumballs = 0;
@@ -40,22 +38,18 @@ int main()  {
     cout << "Welcome to my Gumball Guesser Program!" << endl;
 
     largest_gumball = volume_gumball;
-    max_gumballs = est_gumballs;
     largest_jar = volume_jar;
 
     do {
         //Get user input
         cout << "Enter the radius of a gumball (cm) and the volume of a "
-         << "jar (mL) separated by a space: ";
+            << "jar (mL) separated by a space: ";
         cin >> radius_gumball >> volume_jar;
-
+        
         //Calculations
         radius_gumball_cubed = (radius_gumball * radius_gumball * radius_gumball);
         volume_gumball = ((4.0 / 3) * PI * radius_gumball_cubed);
-
-        volume_jar *= LOAD_FACTOR;
-
-        est_gumballs = volume_jar / volume_gumball;
+        est_gumballs = (volume_jar * LOAD_FACTOR) / volume_gumball;
 
         //Output estimate of gumballs in jar
         cout << "Estimate of gumballs in the jar: " << est_gumballs << endl;
@@ -72,13 +66,9 @@ int main()  {
         }
         
         //Largest jar
-        while (est_gumballs > max_gumballs)    {
-            max_gumballs = est_gumballs;
-            if (volume_jar < largest_jar)    {
-                largest_jar = volume_jar;
-            } 
+        while ((volume_gumball < largest_gumball) && (volume_jar > largest_jar)) {
+            largest_jar = volume_jar;
         }
-
 
         //More guesses?
         cout << endl << "Do you want to enter more (y/n): ";
@@ -87,7 +77,6 @@ int main()  {
         //If y, go through loop again; if n, quit
     } while (userChar == 'y');
     
-
     //average gumballs
     average_gumballs = static_cast<double>(total_gumballs) / static_cast<double>(num_entries);
     
@@ -101,10 +90,10 @@ int main()  {
     cout << "Largest gumball: " << largest_gumball << " cm^3" << endl;
     cout << "Jar size for largest gumball estimate: " << largest_jar << " mL" << endl;
 
-
-
     //Ending message
-    cout << "Thank you for using my program!" << endl;
+    cout << endl << "Thank you for using my program!" << endl;
 
     return 0;
 }
+
+
