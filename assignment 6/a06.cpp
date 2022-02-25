@@ -33,9 +33,15 @@ int main()  {
     int largest_jar = 0;
     int currentNumber, maxNumber = 0;
     char userChar;
+    int total_gumballs = 0;
+    int max_gumballs = 0;
 
     //Welcome message
     cout << "Welcome to my Gumball Guesser Program!" << endl;
+
+    largest_gumball = volume_gumball;
+    max_gumballs = est_gumballs;
+    largest_jar = volume_jar;
 
     do {
         //Get user input
@@ -54,19 +60,40 @@ int main()  {
         //Output estimate of gumballs in jar
         cout << "Estimate of gumballs in the jar: " << est_gumballs << endl;
 
+        //Counter for entries
+        ++num_entries;
+
+        //Total gumballs entered
+        total_gumballs += est_gumballs;
+        
+        //Largest gumball
+        while (volume_gumball > largest_gumball)   {
+            largest_gumball = volume_gumball;
+        }
+        
+        //Largest jar
+        while (est_gumballs > max_gumballs)    {
+            max_gumballs = est_gumballs;
+            if (volume_jar < largest_jar)    {
+                largest_jar = volume_jar;
+            } 
+        }
+
+
         //More guesses?
         cout << endl << "Do you want to enter more (y/n): ";
         cin >> userChar;
     
         //If y, go through loop again; if n, quit
     } while (userChar == 'y');
-
     
 
-    //Maximum and minimum input
+    //average gumballs
+    average_gumballs = static_cast<double>(total_gumballs) / static_cast<double>(num_entries);
     
-    
-    
+    //Set precision
+    cout << fixed << setprecision(2);
+
     // //Display final output
     cout << endl;
     cout << "Number of entries: " << num_entries << endl;
