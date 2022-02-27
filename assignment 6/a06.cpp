@@ -35,7 +35,7 @@ int main()  {
     int max_gumballs = 0;
 
     //Welcome message
-    cout << "Welcome to my Gumball Guesser Program!" << endl;
+    cout << "Welcome to my Gumball Guesser Program!" << endl << endl;
 
     largest_gumball = volume_gumball;
     largest_jar = volume_jar;
@@ -73,8 +73,14 @@ int main()  {
         //More guesses?
         cout << endl << "Do you want to enter more (y/n): ";
         cin >> userChar;
-    
-        //If y, go through loop again; if n, quit
+        cout << endl;
+
+        //If not y or n, invalid input
+        if ((userChar != 'y') && (userChar != 'n'))   {
+            cout << "Invalid input! Please enter y/n: ";
+            cin >> userChar;
+        }
+
     } while (userChar == 'y');
     
     //average gumballs
