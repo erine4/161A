@@ -68,8 +68,6 @@ int main()  {
             }
         }
 
-
-        
         //Calculations
         radiusGumball_cubed = (radiusGumball * radiusGumball * radiusGumball);
         volumeGumball = ((4.0 / 3) * PI * radiusGumball_cubed);
