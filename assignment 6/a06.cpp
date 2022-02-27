@@ -49,6 +49,27 @@ int main()  {
             << "jar (mL) separated by a space: ";
         cin >> radiusGumball >> volumeJar;
         
+        //Check for bad input
+        while (true)    {
+            if ((radiusGumball < 0) || (volumeJar < 0)) {
+                cout << "Bad input! Please enter an integer greater than 0: ";
+                cin >> radiusGumball >> volumeJar;
+            }
+            
+            else if (!radiusGumball && !volumeJar)  {
+                cin.clear();
+                cin.ignore(100, '\n');
+                cout << "Bad input! Please enter an integer greater than 0: ";
+                cin >> radiusGumball >> volumeJar;
+            }
+            
+            else {
+                break;
+            }
+        }
+
+
+        
         //Calculations
         radiusGumball_cubed = (radiusGumball * radiusGumball * radiusGumball);
         volumeGumball = ((4.0 / 3) * PI * radiusGumball_cubed);
