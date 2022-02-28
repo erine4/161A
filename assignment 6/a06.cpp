@@ -25,10 +25,9 @@ using namespace std;
 int main()  {
     //Declare variables
     double radiusGumball = 0;
-    double radiusGumball_cubed = 0;
-    double volumeGumball = 0;
     double volumeJar = 0;
-    int estGumballs = 0;
+    double volumeGumball = 0;
+    int numGumballs = 0;
     int numEntries = 0;
     double averageGumballs = 0;
     double largestGumball = 0;
@@ -36,13 +35,12 @@ int main()  {
     char userChar;
     int totalGumballs = 0;
     int maxGumballs = 0;
-    int largestAmountGumballs = 0;
 
     //Welcome message
     cout << "Welcome to my Gumball Guesser Program!" << endl << endl;
 
     largestGumball = volumeGumball;
-    largestAmountGumballs = estGumballs;
+    maxGumballs = numGumballs;
     largestJar = volumeJar;
 
     do {
@@ -66,18 +64,17 @@ int main()  {
         }
 
         //Calculations
-        radiusGumball_cubed = (radiusGumball * radiusGumball * radiusGumball);
-        volumeGumball = ((4.0 / 3) * PI * radiusGumball_cubed);
-        estGumballs = (volumeJar * LOAD_FACTOR) / volumeGumball;
+        volumeGumball = ((4.0 / 3) * PI * (radiusGumball * radiusGumball * radiusGumball));
+        numGumballs = (volumeJar * LOAD_FACTOR) / volumeGumball;
 
         //Output estimate of gumballs in jar
-        cout << "Estimate of gumballs in the jar: " << estGumballs << endl;
+        cout << "Estimate of gumballs in the jar: " << numGumballs << endl;
 
         //Counter for entries
         ++numEntries;
 
         //Total gumballs entered
-        totalGumballs += estGumballs;
+        totalGumballs += numGumballs;
         
         //Largest gumball
         if (volumeGumball > largestGumball)   {
@@ -85,8 +82,8 @@ int main()  {
         }
         
         //Greatest amount of gumballs
-        if (estGumballs > largestAmountGumballs) {
-            largestAmountGumballs = estGumballs;
+        if (numGumballs > maxGumballs) {
+            maxGumballs = numGumballs;
             largestJar = volumeJar;
         }
 
