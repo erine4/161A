@@ -4,8 +4,8 @@
 # Date:             February 24, 2022
 # Description:      This program estimates the number of gumballs in a jar. 
 #                   If there are multiple entries, it will also print the number of entries,
-#                   average number of gumballs, largest gumball, and the jar size for the largest
-#                   gumball. 
+#                   average number of gumballs, largest gumball, and the largest jar size
+#                   for the largest gumball.
 # Input:            radiusGumball, volumeJar, userChar
 # Output:           estGumballs, averageGumballs, largestGumball, largestJar, numEntries
 # Sources:          None
@@ -32,15 +32,17 @@ int main()  {
     int numEntries = 0;
     double averageGumballs = 0;
     double largestGumball = 0;
-    double largestJar = 0;
+    int largestJar = 0;
     char userChar;
     int totalGumballs = 0;
     int maxGumballs = 0;
+    int largestAmountGumballs = 0;
 
     //Welcome message
     cout << "Welcome to my Gumball Guesser Program!" << endl << endl;
 
     largestGumball = volumeGumball;
+    largestAmountGumballs = estGumballs;
     largestJar = volumeJar;
 
     do {
@@ -51,18 +53,13 @@ int main()  {
         
         //Check for bad input
         while (true)    {
-            if ((radiusGumball < 0) || (volumeJar < 0)) {
-                cout << "Bad input! Please enter an integer greater than 0: ";
-                cin >> radiusGumball >> volumeJar;
-            }
-            
-            else if (!radiusGumball && !volumeJar)  {
+            if ((radiusGumball <= 0 || volumeJar <= 0) || (cin.fail()))  {
                 cin.clear();
-                cin.ignore(100, '\n');
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Bad input! Please enter an integer greater than 0: ";
                 cin >> radiusGumball >> volumeJar;
             }
-            
+
             else {
                 break;
             }
@@ -83,12 +80,13 @@ int main()  {
         totalGumballs += estGumballs;
         
         //Largest gumball
-        while (volumeGumball > largestGumball)   {
+        if (volumeGumball > largestGumball)   {
             largestGumball = volumeGumball;
         }
         
-        //Largest jar
-        while ((volumeGumball < largestGumball) && (volumeJar > largestJar)) {
+        //Greatest amount of gumballs
+        if (estGumballs > largestAmountGumballs) {
+            largestAmountGumballs = estGumballs;
             largestJar = volumeJar;
         }
 
@@ -97,10 +95,17 @@ int main()  {
         cin >> userChar;
         cout << endl;
 
-        //If not y or n, invalid input
-        if ((userChar != 'y') && (userChar != 'n'))   {
-            cout << "Invalid input! Please enter y/n: ";
-            cin >> userChar;
+       //Check for bad input
+        while (true)    {
+            if (userChar != 'y' && userChar != 'n')   {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Invalid input! Please enter y/n: ";
+                cin >> userChar;
+            }
+            else {
+                break;
+            }
         }
 
     } while (userChar == 'y');
@@ -111,7 +116,7 @@ int main()  {
     //Set precision
     cout << fixed << setprecision(2);
 
-    // //Display final output
+    //Display final output
     cout << endl;
     cout << "Number of entries: " << numEntries << endl;
     cout << "Average number of gumballs: " << averageGumballs << endl;
