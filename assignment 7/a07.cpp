@@ -21,10 +21,24 @@
 
 using namespace std;
 
+//declare constants
+const int option1 = 1;
+const int option2 = 2;
+const int option3 = 3;
+const int option4 = 4;
+const double donut = 4.00;
+const double muffin = 4.50;
+const double pastry = 5.50;
+const double bagel = 3.75;
+const double toast = 2.25;
+const double coffee = 3.50;
+const double tea = 2.50;
+
 int main()  {
     //declare variables
     int userOption;
     
+
 
     //set precision to 2 decimals
     cout << fixed << setprecision(2);
