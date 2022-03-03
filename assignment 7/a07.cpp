@@ -76,7 +76,7 @@ int main()  {
                     
             while ((userChar != 'D') && (userChar != 'd') && (userChar != 'M') 
                 && (userChar != 'm') && (userChar != 'P') && (userChar != 'p'))  {
-                cout << "Invalid option! Would you like Donuts (D, M, or P: ";
+                cout << "Invalid option! Would you like Donuts (D, M, or P): ";
                 cin >> userChar;
                 cout << endl;
             }
@@ -125,7 +125,8 @@ int main()  {
                 cout << endl;
             }
             
-            while ((userChar == 'B') || (userChar == 'b') || (userChar == 'T') || (userChar == 't'))    {
+            while ((userChar == 'B') || (userChar == 'b') || 
+                (userChar == 'T') || (userChar == 't'))    {
                 
                 if ((userChar == 'B') || (userChar == 'b')) {
                     cout << "Bagels added." << endl;
@@ -161,7 +162,8 @@ int main()  {
                 cout << endl;
             }
             
-            while ((userChar == 'C') || (userChar == 'c') || (userChar == 'T') || (userChar == 't'))    {
+            while ((userChar == 'C') || (userChar == 'c') || 
+                (userChar == 'T') || (userChar == 't'))    {
 
                 if ((userChar == 'C') || (userChar == 'c')) {
                     cout << "Coffee added." << endl;
@@ -218,7 +220,7 @@ int main()  {
         cout << "Please pay $" << (totalAmount + tip) << endl << endl;
     } 
 
-    //If immediate quit to program
+    //If total is $0 or immediate quit of program
     else {
         cout << "No order placed." << endl << endl;
     }
@@ -229,7 +231,3 @@ int main()  {
     return 0;
 }
 
-
-//fix all FIXME's
-//change incorrect input to match google docs example
-//fix input checkers for each option, make sure total is added
