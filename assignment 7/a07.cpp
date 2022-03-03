@@ -64,7 +64,7 @@ int main()  {
         cin >> userOption;
         cout << endl;
 
-        //Option 1    
+        //Option 1 
         while (userOption == 1) {
             cout << "Would you like" << endl;
             cout << "D: Donuts $" << costDonut << endl;
@@ -74,27 +74,37 @@ int main()  {
             cin >> userChar;
             cout << endl;
                     
-            if ((userChar == 'D') || (userChar == 'd'))  {
-                cout << "Donuts added." << endl;
-                totalAmount += costDonut;
-                cout << "$" << totalAmount << endl << endl;
-            }
-                    
-            else if ((userChar == 'M') || (userChar == 'm')) {
-                cout << "Muffins added." << endl;
-                totalAmount += costMuffin;
-                cout << "Total: $" << totalAmount << endl << endl;
-            }
-                    
-            else if ((userChar == 'P') || (userChar == 'p')) {
-                cout << "Pastries added." << endl;
-                totalAmount += costPastry;
-                cout << "Total: $" << totalAmount << endl << endl;
+            while ((userChar != 'D') && (userChar != 'd') && (userChar != 'M') 
+                && (userChar != 'm') && (userChar != 'P') && (userChar != 'p'))  {
+                cout << "Invalid option! Would you like Donuts (D, M, or P: ";
+                cin >> userChar;
+                cout << endl;
             }
 
-            else {
-                cout << "Invalid input. Please enter D, M, or P: ";
-                cin >> userChar;
+            while ((userChar == 'D') || (userChar == 'd') || (userChar == 'M') 
+                || (userChar == 'm') || (userChar == 'P') || (userChar == 'p'))    {
+
+                if ((userChar == 'D') || (userChar == 'd'))  {
+                    cout << "Donuts added." << endl;
+                    totalAmount += costDonut;
+                    cout << "$" << totalAmount << endl << endl;
+                    break;
+                }
+                    
+                else if ((userChar == 'M') || (userChar == 'm')) {
+                    cout << "Muffins added." << endl;
+                    totalAmount += costMuffin;
+                    cout << "Total: $" << totalAmount << endl << endl;
+                    break;
+                }
+                    
+                else if ((userChar == 'P') || (userChar == 'p')) {
+                    cout << "Pastries added." << endl;
+                    totalAmount += costPastry;
+                    cout << "Total: $" << totalAmount << endl << endl;
+                    break;
+                }
+
             }
             
             break;
@@ -109,23 +119,29 @@ int main()  {
             cin >> userChar;
             cout << endl;
 
-            if ((userChar == 'B') || (userChar == 'b')) {
-                cout << "Bagels added." << endl;
-                totalAmount += costBagel;
-                cout << "Total: $" << totalAmount << endl << endl;
-            }
-
-            else if ((userChar == 'T') || (userChar == 't'))    {
-                cout << "Toast added." << endl;
-                totalAmount += costToast;
-                cout << "Total: $" << totalAmount << endl << endl;
-            }
-        
-            else {
-                cout << "Invalid input. Please enter B or T: ";
+            while ((userChar != 'B') && (userChar != 'b') && (userChar != 'T') && (userChar != 't'))    {
+                cout << "Invalid option! Would you like Bagels (B) or Toast (T): ";
                 cin >> userChar;
+                cout << endl;
             }
             
+            while ((userChar == 'B') || (userChar == 'b') || (userChar == 'T') || (userChar == 't'))    {
+                
+                if ((userChar == 'B') || (userChar == 'b')) {
+                    cout << "Bagels added." << endl;
+                    totalAmount += costBagel;
+                    cout << "Total: $" << totalAmount << endl << endl;
+                    break;
+                }
+
+                else if ((userChar == 'T') || (userChar == 't'))    {
+                    cout << "Toast added." << endl;
+                    totalAmount += costToast;
+                    cout << "Total: $" << totalAmount << endl << endl;
+                    break;
+                }
+            }
+
             break;
         }
 
@@ -138,21 +154,28 @@ int main()  {
             cin >> userChar;
             cout << endl;
             
-            if ((userChar == 'C') || (userChar == 'c')) {
-                cout << "Coffee added." << endl;
-                totalAmount += costCoffee;
-                cout << "Total: $" << totalAmount << endl << endl;
-            }
-
-            else if ((userChar == 'T') || (userChar == 't'))    {
-                cout << "Tea added." << endl;
-                totalAmount += costTea;
-                cout << "Total: $" << totalAmount << endl << endl;
+            while ((userChar != 'C') && (userChar != 'c') && (userChar != 'T') 
+                && (userChar != 't'))    {
+                cout << "Invalid option! Would you like Coffee (C) or Tea (T): ";
+                cin >> userChar;
+                cout << endl;
             }
             
-            else {
-                cout << "Invalid input. Please enter C or T: ";
-                cin >> userChar;
+            while ((userChar == 'C') || (userChar == 'c') || (userChar == 'T') || (userChar == 't'))    {
+
+                if ((userChar == 'C') || (userChar == 'c')) {
+                    cout << "Coffee added." << endl;
+                    totalAmount += costCoffee;
+                    cout << "Total: $" << totalAmount << endl << endl;
+                    break;
+                }
+
+                else if ((userChar == 'T') || (userChar == 't'))    {
+                    cout << "Tea added." << endl;
+                    totalAmount += costTea;
+                    cout << "Total: $" << totalAmount << endl << endl;
+                    break;
+                }
             }
 
             break;
@@ -167,18 +190,15 @@ int main()  {
             cout << endl;
         }
 
-        //FIXME
         //Bad userOption input
         while ((userOption > 4) && (userOption < 1))   {
-            cout << "Invalid option! Choose 1-4: ";
+            cout << "Invalid option! Please choose 1-4: ";
             cin >> userOption;
             cout << endl;
         }
        
     } while (userOption != 4);
 
-    
-    
     //For > $0 total
     if (totalAmount > 0.01)    {
         cout << endl << "Would you like to add a tip? Suggested amounts:" << endl << endl;
@@ -190,14 +210,20 @@ int main()  {
         cin >> tip;
         cout << endl;
 
-        cout << "Please pay $" << (totalAmount + tip) << endl << endl;
-    }
+        while (tip < 0) {
+            cout << "Please enter a tip amount great than $0.00: ";
+            cin >> tip;
+        }
 
-    //FIXME - change to something better
+        cout << "Please pay $" << (totalAmount + tip) << endl << endl;
+    } 
+
+    //If immediate quit to program
     else {
         cout << "No order placed." << endl << endl;
     }
 
+    //End message
     cout << "Thank you for stopping by!" << endl;
     
     return 0;
@@ -206,5 +232,4 @@ int main()  {
 
 //fix all FIXME's
 //change incorrect input to match google docs example
-//validation for no tip input < 0
-//Use an accumulator variable in a loop to keep track of the amount to pay!?
+//fix input checkers for each option, make sure total is added
