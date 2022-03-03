@@ -203,3 +203,8 @@ int main()  {
     return 0;
 }
 
+
+//fix all FIXME's
+//change incorrect input to match google docs example
+//validation for no tip input < 0
+//Use an accumulator variable in a loop to keep track of the amount to pay!?
