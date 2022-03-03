@@ -39,14 +39,11 @@ const double twentyTip = .20;
 
 int main()  {
     //Declare variables
-    int i;
     int userOption;
     char userChar;
     double totalAmount;
     double totalCost;
     
-
-
     //Set precision to 2 decimals
     cout << fixed << setprecision(2);
 
@@ -72,6 +69,7 @@ int main()  {
             cout << "D: Donuts $" << costDonut << endl;
             cout << "M: Muffins $" << costMuffin << endl;
             cout << "P: Pastries $" << costPastry << endl;
+            cout << ">> ";
             cin >> userChar;
                     
             if ((userChar == 'D') || (userChar == 'd'))  {
@@ -106,11 +104,12 @@ int main()  {
             cout << "Would you like" << endl;
             cout << "B: Bagels $" << costBagel << endl;
             cout << "T: Toast $" << costToast << endl;
+            cout << ">> ";
             cin >> userChar;
 
             if ((userChar == 'B') || (userChar == 'b')) {
                 cout << "Bagels added." << endl;
-                cout << "$" << costBagel<< endl;
+                cout << "$" << costBagel << endl;
                 totalAmount += costBagel;
             }
 
@@ -133,33 +132,37 @@ int main()  {
             cout << "Would you like" << endl;
             cout << "C: Coffee $" << costCoffee << endl;
             cout << "T: Tea $" << costTea << endl;
+            cout << ">> ";
             cin >> userChar;
             
-            if ((userOption == 'C') || (userOption == 'c')) {
+            if ((userChar == 'C') || (userChar == 'c')) {
                 cout << "Coffee added." << endl;
                 cout << "$" << costCoffee << endl;
                 totalAmount += costCoffee;
             }
 
-            else if ((userOption == 'T') || (userOption == 't'))    {
+            else if ((userChar == 'T') || (userChar == 't'))    {
                 cout << "Tea added." << endl;
                 cout << "$" << costTea << endl;
                 totalAmount += costTea;
             }
             
             else {
-                cout << "Invalid input. Please enter B or T: ";
+                cout << "Invalid input. Please enter C or T: ";
                 cin >> userChar;
             }
 
             break;
+            //the issue is here.. when you input T or C, it quits the program.
+            
         }
 
-    
+        
+
     }
 
     //Bad userOption input
-    if ((userOption > 4) && (userOption < 1))   {
+    while ((userOption > 4) && (userOption < 1))   {
         cout << "Invalid option! Choose 1-4: ";
         cin >> userOption;
         cout << endl;
