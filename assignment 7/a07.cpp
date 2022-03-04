@@ -56,7 +56,16 @@ int main()  {
         cout << ">> ";
         cin >> userOption;
         cout << endl;
-
+        
+        //Bad userOption input
+        while ((userOption > 4) || (userOption < 1) || (!userOption))   {
+            cin.clear();
+            cin.ignore(100, '\n');
+            cout << "Invalid option! Please choose 1-4: ";
+            cin >> userOption;
+            cout << endl;
+        }
+        
         //Option 1 
         while (userOption == 1) {
             cout << "Would you like" << endl;
@@ -175,27 +184,13 @@ int main()  {
 
             break;
         }
-        
-        //If input is NAN
-        while (!cin)    {
-            cin.clear();
-            cin.ignore(100, '\n');
-            cout << "Bad input, please enter 1-4: ";
-            cin >> userOption;
-            cout << endl;
-        }
-
-        //Bad userOption input
-        while ((userOption > 4) && (userOption < 1))   {
-            cout << "Invalid option! Please choose 1-4: ";
-            cin >> userOption;
-            cout << endl;
-        }
        
     } while (userOption != 4);
-
+    
     //For > $0 total
     if (totalAmount > 0.01)    {
+        cout << "Your total: " << totalAmount << endl;
+        
         cout << endl << "Would you like to add a tip? Suggested amounts:" << endl << endl;
         cout << "10% = $" << (totalAmount * 0.10) << endl;
         cout << "15% = $" << (totalAmount * 0.15) << endl;
