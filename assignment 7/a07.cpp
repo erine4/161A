@@ -22,10 +22,6 @@
 using namespace std;
 
 //Declare constants
-const int option1 = 1;
-const int option2 = 2;
-const int option3 = 3;
-const int option4 = 4;
 const double costDonut = 4.00;
 const double costMuffin = 4.50;
 const double costPastry = 5.50;
@@ -33,9 +29,6 @@ const double costBagel = 3.75;
 const double costToast = 2.25;
 const double costCoffee = 3.50;
 const double costTea = 2.50;
-const double tenTip = .10;
-const double fifteenTip = .15;
-const double twentyTip = .20;
 
 int main()  {
     //Declare variables
@@ -43,7 +36,6 @@ int main()  {
     char userChar;
     double totalAmount;
     double tip;
-    double totalCost;
     
     //Set 2 decimals for $
     cout << fixed << setprecision(2);
@@ -204,16 +196,16 @@ int main()  {
     //For > $0 total
     if (totalAmount > 0.01)    {
         cout << endl << "Would you like to add a tip? Suggested amounts:" << endl << endl;
-        cout << "10% = $" << (totalAmount * tenTip) << endl;
-        cout << "15% = $" << (totalAmount * fifteenTip) << endl;
-        cout << "20% = $" << (totalAmount * twentyTip) << endl << endl;
+        cout << "10% = $" << (totalAmount * 0.10) << endl;
+        cout << "15% = $" << (totalAmount * 0.15) << endl;
+        cout << "20% = $" << (totalAmount * 0.20) << endl << endl;
 
         cout << "Enter tip amount: ";
         cin >> tip;
         cout << endl;
 
         while (tip < 0) {
-            cout << "Please enter a tip amount great than $0.00: ";
+            cout << "Please enter a tip amount greater than $0.00: ";
             cin >> tip;
         }
 
