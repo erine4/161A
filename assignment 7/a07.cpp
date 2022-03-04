@@ -9,9 +9,10 @@
 #                   total price will be shown, as well as some tip option to 
 #                   choose from. Once the tip option has been selected, the 
 #                   total amount will be shown. 
-# Input:            int userInput, 
-# Output:           
-# Sources:          None
+# Input:            int userOption, char userChar, double tip
+# Output:           costDonut, costBagel, costMuffin, costPastry, costToast, 
+#                   costCoffee, costTea, totalAmount
+# Sources:          Assignment 7 Assignment Google Doc
 #******************************************************************************/
 
 #include <iostream>
@@ -74,7 +75,7 @@ int main()  {
             }
 
             while ((userChar == 'D') || (userChar == 'd') || (userChar == 'M') 
-                || (userChar == 'm') || (userChar == 'P') || (userChar == 'p'))    {
+                || (userChar == 'm')   || (userChar == 'P') || (userChar == 'p'))    {
 
                 if ((userChar == 'D') || (userChar == 'd'))  {
                     cout << "Donuts added." << endl;
