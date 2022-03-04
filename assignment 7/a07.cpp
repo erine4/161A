@@ -2,17 +2,17 @@
 # Author:           Erin Egloff
 # Assignment:       Assignment #7
 # Date:             March 2, 2022
-# Description:      This program This program will output menu options for the 
+# Description:      This program will output menu options for the 
 #                   user to choose from. Once an option has been selected, the 
 #                   option and price will be shown and continually added to the 
 #                   total cost. After the user has made all final selections, the 
-#                   total price will be shown, as well as some tip option to 
-#                   choose from. Once the tip option has been selected, the 
+#                   total price will be shown, as well as some tip options to 
+#                   choose from. Once the tip has been inputted, the 
 #                   total amount will be shown. 
 # Input:            int userOption, char userChar, double tip
 # Output:           costDonut, costBagel, costMuffin, costPastry, costToast, 
 #                   costCoffee, costTea, totalAmount
-# Sources:          Assignment 7 Assignment Google Doc
+# Sources:          Assignment 7 Google Doc
 #******************************************************************************/
 
 #include <iostream>
