@@ -58,7 +58,7 @@ int main()  {
         cout << endl;
         
         //Bad userOption input
-        while ((userOption > 4) || (userOption < 1) || (!userOption))   {
+        while ((userOption > 4) || (userOption < 1))   {
             cin.clear();
             cin.ignore(100, '\n');
             cout << "Invalid option! Please choose 1-4: ";
@@ -84,7 +84,7 @@ int main()  {
             }
 
             while ((userChar == 'D') || (userChar == 'd') || (userChar == 'M') 
-                || (userChar == 'm')   || (userChar == 'P') || (userChar == 'p'))    {
+                || (userChar == 'm') || (userChar == 'P') || (userChar == 'p'))    {
 
                 if ((userChar == 'D') || (userChar == 'd'))  {
                     cout << "Donuts added." << endl;
