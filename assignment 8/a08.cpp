@@ -34,6 +34,9 @@ void printWelcome () {
     cout << "Welcome to my Coffee Shop!" << endl << endl;
 }
 
+void printEndMessage () {
+    cout << "Thank you for stopping by!" << endl;
+}
 
 void printMenu () {
     //Menu options
@@ -106,6 +109,13 @@ void printSubMenu (int option)  {
     }
 }
 
+//how to incorporate running total? 
+int costFunction (int cost) {
+    int total = 0;
+    total += cost;
+
+    return total;
+}
 
 int main()  {
     int userOption;
@@ -127,13 +137,16 @@ int main()  {
         cout << endl;
         printSelection(userChar);
     
+        //how to print running total?
+
+        //exit program using 4 and only print end message?
         
     
     
     }
     
 
-
+    printEndMessage();
 
 
 
