@@ -36,8 +36,8 @@ void printEndMessage();
 void printMenu();
 int readOption();
 int readOptionChar();
-void printSubMenu();
-// int subSelection();
+int printSubMenu(int option);
+double subSelection(char choice);
 
 
 int main()  {
@@ -45,24 +45,26 @@ int main()  {
     int userOption;
     char userChar;
 
-    //setprecision
-    cout << fixed << setprecision(2);
-
     printWelcomeMessage();
 
-    printMenu();
-    cout << ">>";
-    cin >> userOption;
-    cout << endl;
-    userOption = readOption();
+    do  {
+        printMenu();
+        cout << ">>";
+        userOption = readOption();
+        cout << endl;
 
-    printSubMenu();
-    cout << ">>";
-    cin >> userChar;
-    userChar = readOptionChar();
+        printSubMenu(userOption);
+        cout << ">>";
+        userChar = readOptionChar();
+        cout << endl;
+
+        cout << fixed << setprecision(2) << subSelection(userChar) << endl << endl;
+
+
+    } while (userOption != 4);
     
-    // subSelection();
-    // cout << ">>";
+    
+    
     
     
 
@@ -88,8 +90,7 @@ void printMenu () {
     cout << "4. Quit" << endl << endl; 
 }
 
-void printSubMenu ()  {
-    int option;
+int printSubMenu (int option)  {
 
     //Submenu options
     if (option == 1)    {
@@ -111,23 +112,32 @@ void printSubMenu ()  {
         cout << "J: Juice $" << costJuice << endl << endl;
     }
 
+    return option;
 }
 
 int readOption ()  {
     int input;
-    
+    cin >> input; 
+
     //input checker
-    while ((input < 1) && (input > 4))  {
+    while ((input < 1) || (input > 4))  {
         cin.clear();
-        cin.ignore(100, '\n');
+        cin.ignore(2, '\n');
         cout << "Invalid option. Please choose 1-4: ";
         cin >> input;
         cout << endl;
     }
+
+    while ((input == 1) || (input == 2) || (input == 3))   {
+        break;
+    }
+
+    return input;
 }
 
 int readOptionChar ()   {
     char choice;
+    cin >> choice;
 
     //input checker for char
     while ((choice != 'D') && (choice != 'd') && (choice != 'M') 
@@ -139,45 +149,46 @@ int readOptionChar ()   {
         cout << "Invalid option! Would you like Donuts (D, M, or P): ";
         cin >> choice;
         cout << endl;
+        
     }
+
+    return choice;
 }
 
-// int subSelection ()    {
-//     char choice;
-//     cin >> choice;
+double subSelection (char choice)    {
 
-//     double total = 0.00;
+    double total = 0.00;
 
-//     //choice added
-//     if ((choice == 'D') || (choice == 'd')) {   
-//         cout << "Donuts added.";
-//         total += costDonut;
-//     }
-//     else if ((choice == 'M') || (choice == 'm'))    {
-//         cout << "Muffins added.";
-//         total += costMuffin;
-//     }
-//     else if ((choice == 'P') || (choice == 'p'))    {
-//         cout << "Pastries added.";
-//         total += costPastry;
-//     }
-//     else if ((choice == 'B') || (choice == 'b'))    {
-//         cout << "Bagels added.";
-//         total += costBagel;
-//     }
-//     else if ((choice == 'T') || (choice == 't'))    {
-//         cout << "Toast added. $";
-//         total += costToast;
-//     }
-//     else if ((choice == 'C') || (choice == 'c'))    {
-//         cout << "Coffee added. $";
-//         total += costCoffee;
-//     }
-//     else if ((choice == 'J') || (choice == 'j'))    {
-//         cout << "Juice added. $";
-//         total += costJuice;
-//     }
+    //choice added
+    if ((choice == 'D') || (choice == 'd')) {   
+        cout << "Donuts added. $";
+        total += costDonut;
+    }
+    else if ((choice == 'M') || (choice == 'm'))    {
+        cout << "Muffins added. $";
+        total += costMuffin;
+    }
+    else if ((choice == 'P') || (choice == 'p'))    {
+        cout << "Pastries added. $";
+        total += costPastry;
+    }
+    else if ((choice == 'B') || (choice == 'b'))    {
+        cout << "Bagels added. $";
+        total += costBagel;
+    }
+    else if ((choice == 'T') || (choice == 't'))    {
+        cout << "Toast added. $";
+        total += costToast;
+    }
+    else if ((choice == 'C') || (choice == 'c'))    {
+        cout << "Coffee added. $";
+        total += costCoffee;
+    }
+    else if ((choice == 'J') || (choice == 'j'))    {
+        cout << "Juice added. $";
+        total += costJuice;
+    }
     
-//     return total;
-// }
+    return total;
+}
 
