@@ -38,13 +38,17 @@ int readOption();
 int readOptionChar();
 int printSubMenu(int option);
 double subSelection(char choice);
+int costFunction(char Choice);
 
 
 int main()  {
     //declare variables
     int userOption;
     char userChar;
+    double total = 0.00;
 
+    cout << fixed << setprecision(2);
+    
     printWelcomeMessage();
 
     do  {
@@ -58,8 +62,10 @@ int main()  {
         userChar = readOptionChar();
         cout << endl;
 
-        cout << fixed << setprecision(2) << subSelection(userChar) << endl << endl;
+        cout << subSelection(userChar) << costFunction(userChar) << endl;
 
+        // total += costFunction(userChar);
+        // cout << total << endl;
 
     } while (userOption != 4);
     
@@ -157,38 +163,56 @@ int readOptionChar ()   {
 
 double subSelection (char choice)    {
 
-    double total = 0.00;
-
     //choice added
     if ((choice == 'D') || (choice == 'd')) {   
         cout << "Donuts added. $";
-        total += costDonut;
     }
     else if ((choice == 'M') || (choice == 'm'))    {
         cout << "Muffins added. $";
-        total += costMuffin;
     }
     else if ((choice == 'P') || (choice == 'p'))    {
         cout << "Pastries added. $";
-        total += costPastry;
     }
     else if ((choice == 'B') || (choice == 'b'))    {
         cout << "Bagels added. $";
-        total += costBagel;
     }
     else if ((choice == 'T') || (choice == 't'))    {
         cout << "Toast added. $";
-        total += costToast;
     }
     else if ((choice == 'C') || (choice == 'c'))    {
         cout << "Coffee added. $";
-        total += costCoffee;
     }
     else if ((choice == 'J') || (choice == 'j'))    {
         cout << "Juice added. $";
-        total += costJuice;
     }
     
-    return total;
+    return choice;
 }
 
+int costFunction (char userChar) {
+    double total = 0.00;
+
+    if ((userChar == 'D') || (userChar == 'd')) {
+        total += costDonut;
+    }
+    if ((userChar == 'M') || (userChar == 'm')) {
+        total += costMuffin;
+    }
+    if ((userChar == 'P') || (userChar == 'p')) {
+        total += costPastry;
+    }
+    if ((userChar == 'B') || (userChar == 'b')) {
+        total += costBagel;
+    }
+    if ((userChar == 'T') || (userChar == 't')) {
+        total += costToast;
+    }
+    if ((userChar == 'C') || (userChar == 'c')) {
+        total += costCoffee;
+    }
+    if ((userChar == 'J') || (userChar == 'j')) {
+        total += costJuice;
+    }
+
+    return total;
+}
