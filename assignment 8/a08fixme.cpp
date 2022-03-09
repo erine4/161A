@@ -37,8 +37,8 @@ void printMenu();
 int readOption();
 int readOptionChar();
 int printSubMenu(int option);
-double subSelection(char choice);
-int costFunction(char Choice);
+int subSelection(char choice);
+double costFunction(char userChar);
 
 
 int main()  {
@@ -161,7 +161,7 @@ int readOptionChar ()   {
     return choice;
 }
 
-double subSelection (char choice)    {
+int subSelection (char choice)    {
 
     //choice added
     if ((choice == 'D') || (choice == 'd')) {   
@@ -189,7 +189,7 @@ double subSelection (char choice)    {
     return choice;
 }
 
-int costFunction (char userChar) {
+double costFunction (char userChar) {
     double total = 0.00;
 
     if ((userChar == 'D') || (userChar == 'd')) {
