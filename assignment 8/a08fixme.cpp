@@ -9,8 +9,9 @@
 #                   total price will be shown, as well as some tip options to 
 #                   choose from. Once the tip has been inputted, the 
 #                   total amount will be shown. 
-# Input:            
-# Output:           
+# Input:            int userOption, char userChar, double tip
+# Output:           costDonut, costBagel, costMuffin, costPastry, costToast, 
+#                   costCoffee, costJuice, tip, total
 # Sources:          Assignment 8 Google Doc
 #******************************************************************************/
 
@@ -242,6 +243,8 @@ char subSelection (char choice)    {
         cout << "Juice added. $";
    
     }
+
+    return choice;
     
 }
 
@@ -284,5 +287,7 @@ int tipFunction (double total)    {
     //20% tip
     cout << "20% = $" << (total * .20) << endl << endl;
     }
+
+    return total;
 
 }
