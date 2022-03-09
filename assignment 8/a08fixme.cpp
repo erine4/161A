@@ -35,7 +35,7 @@ void printWelcomeMessage();
 void printEndMessage();
 void printMenu();
 int readOption();
-int readOptionChar();
+int readOptionChar(int option);
 int printSubMenu(int option);
 char subSelection(char choice);
 double costFunction(char userChar);
@@ -59,19 +59,14 @@ int main()  {
 
         printSubMenu(userOption);
         cout << ">>";
-        userChar = readOptionChar();
+        userChar = readOptionChar(userOption);
         cout << endl;
 
         subSelection(userChar);
 
         cout << costFunction(userChar) << endl << endl;
 
-        
 
-    
-
-
-        
 
     } while (userOption != 4);
     
@@ -147,21 +142,42 @@ int readOption ()  {
     return input;
 }
 
-int readOptionChar ()   {
+int readOptionChar (int option)   {
     char choice;
     cin >> choice;
 
-    //input checker for char
-    while ((choice != 'D') && (choice != 'd') && (choice != 'M') 
-        && (choice != 'm') && (choice != 'P') && (choice != 'p') 
-        && (choice != 'B') && (choice != 'b') && (choice != 'T')
-        && (choice != 't') && (choice != 'C') && (choice != 'c')
-        && (choice != 'J') && (choice != 'j')) {
-        cin.clear();
-        cout << "Invalid option! Type the choice letter: ";
-        cin >> choice;
-        cout << endl;
-        
+    //input checker for char FIXMEEEE
+    while (option == 1) {
+        while ((choice != 'D') && (choice != 'd') && (choice != 'M') 
+            && (choice != 'm') && (choice != 'P') && (choice != 'p'))   {
+            cin.clear();
+            cout << "Invalid option! Choose D, M, or P: ";
+            cin >> choice;
+            cout << endl;
+        }
+        break;
+    }
+
+    while (option == 2) {    
+        while ((choice != 'B') && (choice != 'b') && (choice != 'T')
+            && (choice != 't')) {
+            cin.clear();
+            cout << "Invalid option! Choose B or T: ";
+            cin >> choice;
+            cout << endl;
+        }
+        break;
+    }
+
+    while (option == 3) {
+        while ((choice != 'C') && (choice != 'c') && 
+            (choice != 'J') && (choice != 'j')) {
+            cin.clear();
+            cout << "Invalid option! Choose C or J: ";
+            cin >> choice;
+            cout << endl;
+        }
+        break;
     }
     
     return choice;
