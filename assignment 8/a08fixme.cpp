@@ -38,7 +38,7 @@ int readOption();
 int readOptionChar();
 int printSubMenu(int option);
 int subSelection(char choice);
-double costFunction(char userChar);
+int costFunction(char userChar);
 
 
 int main()  {
@@ -62,14 +62,19 @@ int main()  {
         userChar = readOptionChar();
         cout << endl;
 
-        cout << subSelection(userChar) << costFunction(userChar) << endl;
+        cout << subSelection(userChar);
+        cout << fixed << setprecision(2) << costFunction(userChar) << endl;
 
-        // total += costFunction(userChar);
-        // cout << total << endl;
+        total += costFunction(userChar);
+
+        
 
     } while (userOption != 4);
     
-    
+    if (userOption == 4) {
+        cout << total << endl;
+
+    }
     
     
     
@@ -152,12 +157,20 @@ int readOptionChar ()   {
         && (choice != 't') && (choice != 'C') && (choice != 'c')
         && (choice != 'J') && (choice != 'j')) {
         cin.clear();
-        cout << "Invalid option! Would you like Donuts (D, M, or P): ";
+        cout << "Invalid option! Type the choice letter: ";
         cin >> choice;
         cout << endl;
         
     }
 
+    while ((choice != 'D') && (choice != 'd') && (choice != 'M') 
+        && (choice != 'm') && (choice != 'P') && (choice != 'p') 
+        && (choice != 'B') && (choice != 'b') && (choice != 'T')
+        && (choice != 't') && (choice != 'C') && (choice != 'c')
+        && (choice != 'J') && (choice != 'j')) {
+        break;
+    }
+    
     return choice;
 }
 
@@ -189,29 +202,29 @@ int subSelection (char choice)    {
     return choice;
 }
 
-double costFunction (char userChar) {
+int costFunction (char userChar) {
     double total = 0.00;
 
     if ((userChar == 'D') || (userChar == 'd')) {
-        total += costDonut;
+        total = costDonut;
     }
-    if ((userChar == 'M') || (userChar == 'm')) {
-        total += costMuffin;
+    else if ((userChar == 'M') || (userChar == 'm')) {
+        total = costMuffin;
     }
-    if ((userChar == 'P') || (userChar == 'p')) {
-        total += costPastry;
+    else if ((userChar == 'P') || (userChar == 'p')) {
+        total = costPastry;
     }
-    if ((userChar == 'B') || (userChar == 'b')) {
-        total += costBagel;
+    else if ((userChar == 'B') || (userChar == 'b')) {
+        total = costBagel;
     }
-    if ((userChar == 'T') || (userChar == 't')) {
-        total += costToast;
+    else if ((userChar == 'T') || (userChar == 't')) {
+        total = costToast;
     }
-    if ((userChar == 'C') || (userChar == 'c')) {
-        total += costCoffee;
+    else if ((userChar == 'C') || (userChar == 'c')) {
+        total = costCoffee;
     }
-    if ((userChar == 'J') || (userChar == 'j')) {
-        total += costJuice;
+    else if ((userChar == 'J') || (userChar == 'j')) {
+        total = costJuice;
     }
 
     return total;
