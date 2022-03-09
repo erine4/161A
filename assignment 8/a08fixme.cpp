@@ -37,8 +37,8 @@ void printMenu();
 int readOption();
 int readOptionChar();
 int printSubMenu(int option);
-int subSelection(char choice);
-int costFunction(char userChar);
+char subSelection(char choice);
+double costFunction(char userChar);
 
 
 int main()  {
@@ -46,9 +46,9 @@ int main()  {
     int userOption;
     char userChar;
     double total = 0.00;
-
-    cout << fixed << setprecision(2);
     
+    cout << fixed << setprecision(2);
+
     printWelcomeMessage();
 
     do  {
@@ -62,19 +62,20 @@ int main()  {
         userChar = readOptionChar();
         cout << endl;
 
-        cout << subSelection(userChar);
-        cout << fixed << setprecision(2) << costFunction(userChar) << endl;
+        subSelection(userChar);
 
-        total += costFunction(userChar);
+        cout << costFunction(userChar) << endl << endl;
+
+        
+
+    
+
 
         
 
     } while (userOption != 4);
     
-    if (userOption == 4) {
-        cout << total << endl;
-
-    }
+   
     
     
     
@@ -162,47 +163,45 @@ int readOptionChar ()   {
         cout << endl;
         
     }
-
-    while ((choice != 'D') && (choice != 'd') && (choice != 'M') 
-        && (choice != 'm') && (choice != 'P') && (choice != 'p') 
-        && (choice != 'B') && (choice != 'b') && (choice != 'T')
-        && (choice != 't') && (choice != 'C') && (choice != 'c')
-        && (choice != 'J') && (choice != 'j')) {
-        break;
-    }
     
     return choice;
 }
 
-int subSelection (char choice)    {
+char subSelection (char choice)    {
 
     //choice added
     if ((choice == 'D') || (choice == 'd')) {   
         cout << "Donuts added. $";
+        
     }
     else if ((choice == 'M') || (choice == 'm'))    {
         cout << "Muffins added. $";
+    
     }
     else if ((choice == 'P') || (choice == 'p'))    {
         cout << "Pastries added. $";
+   
     }
     else if ((choice == 'B') || (choice == 'b'))    {
         cout << "Bagels added. $";
+     
     }
     else if ((choice == 'T') || (choice == 't'))    {
         cout << "Toast added. $";
+    
     }
     else if ((choice == 'C') || (choice == 'c'))    {
         cout << "Coffee added. $";
+    
     }
     else if ((choice == 'J') || (choice == 'j'))    {
         cout << "Juice added. $";
+   
     }
     
-    return choice;
 }
 
-int costFunction (char userChar) {
+double costFunction (char userChar) {
     double total = 0.00;
 
     if ((userChar == 'D') || (userChar == 'd')) {
