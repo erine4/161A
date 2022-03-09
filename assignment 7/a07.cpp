@@ -35,8 +35,8 @@ int main()  {
     //Declare variables
     int userOption;
     char userChar;
-    double totalAmount;
-    double tip;
+    double totalAmount = 0.00;
+    double tip = 0.00;
     
     //Set 2 decimals for $
     cout << fixed << setprecision(2);
