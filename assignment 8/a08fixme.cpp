@@ -64,15 +64,15 @@ int main()  {
 
         subSelection(userChar);
 
-        cout << costFunction(userChar) << endl << endl;
+        total += costFunction(userChar);
+        
+        cout << total << endl << endl;
 
 
 
     } while (userOption != 4);
     
-   
-    
-    
+
     
 
     printEndMessage();
@@ -146,7 +146,7 @@ int readOptionChar (int option)   {
     char choice;
     cin >> choice;
 
-    //input checker for char FIXMEEEE
+    //input checker for char
     while (option == 1) {
         while ((choice != 'D') && (choice != 'd') && (choice != 'M') 
             && (choice != 'm') && (choice != 'P') && (choice != 'p'))   {
