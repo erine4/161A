@@ -39,6 +39,7 @@ int readOptionChar(int option);
 int printSubMenu(int option);
 char subSelection(char choice);
 double costFunction(char userChar);
+int tipFunction(double total);
 
 
 int main()  {
@@ -46,37 +47,68 @@ int main()  {
     int userOption;
     char userChar;
     double total = 0.00;
+    double tip = 0.00;
     
     cout << fixed << setprecision(2);
 
+    //welcome message
     printWelcomeMessage();
 
     do  {
+        //main menu
         printMenu();
         cout << ">>";
+
+        //user input and check
         userOption = readOption();
+        
+        //exit loop if "quit" is selected
+        if (userOption == 4) {
+            break;
+        }
+    
         cout << endl;
 
+        //print selected menu
         printSubMenu(userOption);
         cout << ">>";
+        
+        //print selected option from menu and check input
         userChar = readOptionChar(userOption);
         cout << endl;
 
+        //print selection added
         subSelection(userChar);
 
+        //print running total
         total += costFunction(userChar);
-        
         cout << total << endl << endl;
 
+        
 
-
-    } while (userOption != 4);
+    } while ((userOption == 1) || (userOption == 2) || (userOption == 3));
     
+    //print overall total
+    cout << endl << "Your total: $" << total << endl << endl;
 
-    
+    //print tip options
+    tipFunction(total);
+    cout << ">>";
+    //input tip
+    cin >> tip;
 
+    //check tip input
+    while (tip < 0) {
+        cout << "Please enter a tip amount greater than $0.00: ";
+        cin >> tip;
+    }
+
+    //print overall total + tip
+    cout << endl << "Please pay $" << (total + tip) << endl << endl;
+
+    //print end message
     printEndMessage();
-
+    
     return 0;
 }
 
@@ -123,20 +155,16 @@ int printSubMenu (int option)  {
 }
 
 int readOption ()  {
-    int input;
+    int input = 0;
     cin >> input; 
 
-    //input checker
+    //input checker FIXME
     while ((input < 1) || (input > 4))  {
         cin.clear();
         cin.ignore(2, '\n');
         cout << "Invalid option. Please choose 1-4: ";
         cin >> input;
         cout << endl;
-    }
-
-    while ((input == 1) || (input == 2) || (input == 3))   {
-        break;
     }
 
     return input;
@@ -243,4 +271,18 @@ double costFunction (char userChar) {
     }
 
     return total;
+}
+
+int tipFunction (double total)    {
+
+    if (total > 0.01)   {
+    cout << endl << "Would you like to add a tip?" << endl;
+    //10% tip
+    cout << "10% = $" << (total * .10) << endl;
+    //15% tip
+    cout << "15% = $" << (total * .15) << endl;
+    //20% tip
+    cout << "20% = $" << (total * .20) << endl << endl;
+    }
+
 }
