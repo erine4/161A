@@ -45,7 +45,7 @@ double tipFunction(double);
 
 int main()  {
     //declare variables
-    int userOption;
+    int userOption = 0;
     char userChar;
     double total = 0.00;
     double tip = 0.00;
