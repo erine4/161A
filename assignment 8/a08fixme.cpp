@@ -36,11 +36,11 @@ void printWelcomeMessage();
 void printEndMessage();
 void printMenu();
 int readOption();
-int readOptionChar(int option);
-int printSubMenu(int option);
-char subSelection(char choice);
-double costFunction(char userChar);
-int tipFunction(double total);
+int readOptionChar(int);
+void printSubMenu(int);
+void subSelection(char);
+double costFunction(char);
+double tipFunction(double);
 
 
 int main()  {
@@ -89,6 +89,11 @@ int main()  {
 
     } while ((userOption == 1) || (userOption == 2) || (userOption == 3));
     
+    if (total < 0.01)   {
+        printEndMessage();
+        return 0;
+    }
+    
     //print overall total
     cout << endl << "Your total: $" << total << endl << endl;
 
@@ -130,7 +135,7 @@ void printMenu () {
     cout << "4. Quit" << endl << endl; 
 }
 
-int printSubMenu (int option)  {
+void printSubMenu (int option)  {
 
     //Submenu options
     if (option == 1)    {
@@ -151,8 +156,6 @@ int printSubMenu (int option)  {
         cout << "C: Coffee $" << costCoffee << endl;
         cout << "J: Juice $" << costJuice << endl << endl;
     }
-
-    return option;
 }
 
 int readOption ()  {
@@ -162,7 +165,7 @@ int readOption ()  {
     //input checker FIXME
     while ((input < 1) || (input > 4))  {
         cin.clear();
-        cin.ignore(2, '\n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid option. Please choose 1-4: ";
         cin >> input;
         cout << endl;
@@ -212,7 +215,7 @@ int readOptionChar (int option)   {
     return choice;
 }
 
-char subSelection (char choice)    {
+void subSelection (char choice)    {
 
     //choice added
     if ((choice == 'D') || (choice == 'd')) {   
@@ -243,9 +246,6 @@ char subSelection (char choice)    {
         cout << "Juice added. $";
    
     }
-
-    return choice;
-    
 }
 
 double costFunction (char userChar) {
@@ -276,7 +276,7 @@ double costFunction (char userChar) {
     return total;
 }
 
-int tipFunction (double total)    {
+double tipFunction (double total)    {
 
     if (total > 0.01)   {
     cout << endl << "Would you like to add a tip?" << endl;
@@ -289,5 +289,4 @@ int tipFunction (double total)    {
     }
 
     return total;
-
 }
