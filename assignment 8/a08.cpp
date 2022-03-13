@@ -105,7 +105,9 @@ int main()  {
     cin >> tip;
 
     //check tip input
-    while (tip < 0) {
+    while ((tip < 0) || (!tip)) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Please enter a tip amount greater than $0.00: ";
         cin >> tip;
     }
