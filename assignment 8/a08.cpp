@@ -100,6 +100,7 @@ int main()  {
     //print tip options
     tipFunction(total);
     cout << ">>";
+    
     //input tip
     cin >> tip;
 
@@ -279,13 +280,13 @@ double costFunction (char userChar) {
 double tipFunction (double total)    {
 
     if (total > 0.01)   {
-    cout << endl << "Would you like to add a tip?" << endl;
-    //10% tip
-    cout << "10% = $" << (total * .10) << endl;
-    //15% tip
-    cout << "15% = $" << (total * .15) << endl;
-    //20% tip
-    cout << "20% = $" << (total * .20) << endl << endl;
+        cout << endl << "Would you like to add a tip?" << endl;
+        //10% tip
+        cout << "10% = $" << (total * .10) << endl;
+        //15% tip
+        cout << "15% = $" << (total * .15) << endl;
+        //20% tip
+        cout << "20% = $" << (total * .20) << endl << endl;
     }
 
     return total;
