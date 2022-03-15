@@ -29,10 +29,11 @@ int main()  {
     cout << "Welcome to my Final Exam Practice." << endl << endl;
 
     cout << "Enter positive whole numbers separated by newlines (0 to quit): ";
-    getline(userInput);
-
-
     //input
+    getline(cin, userInput);
+
+
+    
 
 
 
