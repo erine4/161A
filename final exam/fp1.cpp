@@ -23,8 +23,13 @@ using namespace std;
 
 int main()  {
     //declare variables
+    string userInput;
 
     //opening message
+    cout << "Welcome to my Final Exam Practice." << endl << endl;
+
+    cout << "Enter positive whole numbers separated by newlines (0 to quit): ";
+    getline(userInput);
 
 
     //input
