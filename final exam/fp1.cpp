@@ -23,22 +23,38 @@ using namespace std;
 
 int main()  {
     //declare variables
-    string userInput;
+    int input;
+    int max = 0;
 
     //opening message
     cout << "Welcome to my Final Exam Practice." << endl << endl;
 
     cout << "Enter positive whole numbers separated by newlines (0 to quit): ";
     //input
-    getline(cin, userInput);
+    cin >> input; 
 
+    do {
+        while ((input > max) || (input > 0)) {
+            max = input;
+        }
+    
+        cin >> input;
+
+    } while (input != 0);
 
     
+    if (input == 0) {
+        if (max <= 0)  {
+        cout << "No positive whole numbers were entered." << endl;
+        }   
+        
+        else if (max > 0) {
+            cout << "The largest number you entered is " << max << endl;
+        }
 
+    }    
+    
 
-
-
-    //ending message
 
     return 0;
 }
