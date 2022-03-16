@@ -16,7 +16,7 @@
 using namespace std;
 
 //Declare Functions
-int inputChecker(int);
+
 
 
 int main()  {
@@ -29,18 +29,18 @@ int main()  {
 
     cout << "Enter positive whole numbers separated by newlines (0 to quit): ";
     
-
+    cin >> input;
+   
 
     do {
-        
-        inputChecker(input);
-        
 
         //max 
         while ((input > max) && (input > 0)) {
             max = input;
         }
 
+        cin >> input;
+        
 
     } while (input != 0);
 
@@ -63,15 +63,3 @@ int main()  {
     return 0;
 }
 
-int inputChecker (int input)    {
-    cin >> input;
-
-    while (!input)  {
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Bad input. Please enter a whole number: ";
-        cin >> input;
-    }
-    
-    return input;
-}
