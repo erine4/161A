@@ -11,7 +11,7 @@
 #                   total amount will be shown. 
 # Input:            int userOption, char userChar, double tip
 # Output:           costDonut, costBagel, costMuffin, costPastry, costToast, 
-#                   costCoffee, costJuice, tip, total
+#                   costCoffee, costJuice, tip, double total
 # Sources:          Assignment 8 Google Doc
 #******************************************************************************/
 
