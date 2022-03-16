@@ -33,24 +33,21 @@ int main()  {
     do {
 
         cin >> input;
-        while (!input)  {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Bad input. Please enter a whole number: ";
-            cin >> input;
-            if (input == 0)  {
-                break;
-            }
-        }
-        //won't break do while when 0 is entered???
+        
+        // while (!input)  {
+        //     cin.clear();
+        //     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        //     cout << "Bad input. Please enter a whole number: ";
+        //     cin >> input;
+        // }
+
+        //won't break do while when 0 is entered AFTER input checker? only breaks in input checker?
         
         //max 
         while ((input > max) && (input > 0)) {
             max = input;
         }
 
-        
-        
 
     } while (input != 0);
 
