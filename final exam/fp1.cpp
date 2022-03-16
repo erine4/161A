@@ -28,18 +28,28 @@ int main()  {
     cout << "Welcome to my Final Exam Practice." << endl << endl;
 
     cout << "Enter positive whole numbers separated by newlines (0 to quit): ";
-    
-    cin >> input;
    
 
     do {
 
+        cin >> input;
+        while (!input)  {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Bad input. Please enter a whole number: ";
+            cin >> input;
+            if (input == 0)  {
+                break;
+            }
+        }
+        //won't break do while when 0 is entered???
+        
         //max 
         while ((input > max) && (input > 0)) {
             max = input;
         }
 
-        cin >> input;
+        
         
 
     } while (input != 0);
