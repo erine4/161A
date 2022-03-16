@@ -9,7 +9,7 @@
 #                   total price will be shown, as well as some tip options to 
 #                   choose from. Once the tip has been inputted, the 
 #                   total amount will be shown. 
-# Input:            int userOption, char userChar, double tip
+# Input:            userOption, userChar, tip
 # Output:           costDonut, costBagel, costMuffin, costPastry, costToast, 
 #                   costCoffee, costTea, totalAmount
 # Sources:          Assignment 7 Google Doc
