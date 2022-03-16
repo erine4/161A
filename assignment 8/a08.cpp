@@ -38,7 +38,7 @@ void printMenu();
 int readOption();
 int readOptionChar(int);
 void printSubMenu(int);
-void subSelection(char);
+void executeOption(char);
 double costFunction(char);
 double tipFunction(double);
 
@@ -52,7 +52,7 @@ int main()  {
     
     cout << fixed << setprecision(2);
 
-    //welcome message
+    //welcome message!
     printWelcomeMessage();
 
     do  {
@@ -79,7 +79,7 @@ int main()  {
         cout << endl;
 
         //print selection added
-        subSelection(userChar);
+        executeOption(userChar);
 
         //print running total
         total += costFunction(userChar);
@@ -218,7 +218,7 @@ int readOptionChar (int option)   {
     return choice;
 }
 
-void subSelection (char choice)    {
+void executeOption (char choice)    {
 
     //choice added
     if ((choice == 'D') || (choice == 'd')) {   
